@@ -1,9 +1,11 @@
+/*** VARIABLES ***/
 $main-color: #9356dc;
 $second-color: #ff79da;
 $third-color: #99e2d0;
 
+/*** GENERAL ***/
 * {
-    max-width: 1440px;
+    margin-left: 0;
 }
 
 a {
@@ -12,49 +14,98 @@ a {
 }
 
 h1 {
-
+    font-family: "Shrikhand";
+    font-size: 30px;
+    font-weight: 400;
+    color: #000;
 }
 
 h2 {
-
+    font-size: 24px;
+    padding-top: 30px;
 }
 
 h3 {
-
+    font-size: 18px;
 }
 
-header { /*** HEADER ***/
+h2,
+h3 {
+    font-family: "Roboto";
+    font-weight: 700;
+    color: #000;
+}
+
+/*** HEADER ***/
+header {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
-    gap: 30px;
-}
 
-header .logo {
-        justify-content: center;
+    .logo {
         height: 44px;
         padding: 24px 89px 0;
     }
 
+    a {
+        justify-content: center;
+    }
+}
+
 .search-location {
-    background-color:#e6e6e6; /*** couleur à revoir ***/
+    background-color: #ededed;
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
     height: 50px;
-    width: 100vw;
+    width: auto;
     gap: 17px;
+    border-top: 3px solid #dbdbdb;
+
+    input {
+        background-color: #ededed;
+        border: none;
+        font-size: 16px;
+    }
+
+    .icon-marker {
+        display: flex;
+        align-items: center;
+        padding-left: 60px;
+    }
 }
 
-.search-location input {
-    background-color: #e6e6e6; /*** couleur à revoir ***/
-    border: none;
-    font-size: 16px;
-}
+/*** 1ER RECTANGLE ***/
 
-.search-location .icon-marker {
+.first {
+    background: #f7f7f7;
     display: flex;
+    flex-direction: column;
+    width: auto;
+    text-align: center;
     align-items: center;
-    width: 12px;
-    width: 16px;
+    gap: 30px;
+    padding-bottom: 60px;
+
+    .second-title span {
+        /*** pq si gras ? ***/
+        display: flex;
+        font-family: "Roboto";
+        font-weight: 300;
+        font-size: 18px;
+    }
+}
+
+.button-search {
+    color: white;
+    font-size: 16px;
+    font-family: "Roboto";
+    font-weight: 500;
+    padding: 13px 18.75px;
+    background: linear-gradient($second-color, $main-color);
+    border: none;
+    border-radius: 30px;
+    width: 218px;
+    height: 50px;
 }

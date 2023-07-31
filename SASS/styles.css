@@ -1,0 +1,101 @@
+/*** VARIABLES ***/
+/*** GENERAL ***/
+* {
+  margin-left: 0;
+}
+
+a {
+  text-decoration: none;
+  display: flex;
+}
+
+h1 {
+  font-family: "Shrikhand";
+  font-size: 30px;
+  font-weight: 400;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  padding-top: 30px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h2,
+h3 {
+  font-family: "Roboto";
+  font-weight: 700;
+  color: #000;
+}
+
+/*** HEADER ***/
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+header .logo {
+  height: 44px;
+  padding: 24px 89px 0;
+}
+header a {
+  justify-content: center;
+}
+
+.search-location {
+  background-color: #ededed;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 50px;
+  width: auto;
+  gap: 17px;
+  border-top: 3px solid #dbdbdb;
+}
+.search-location input {
+  background-color: #ededed;
+  border: none;
+  font-size: 16px;
+}
+.search-location .icon-marker {
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+}
+
+/*** 1ER RECTANGLE ***/
+.first {
+  background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  text-align: center;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 60px;
+}
+.first .second-title span {
+  /*** pq si gras ? ***/
+  display: flex;
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.button-search {
+  color: white;
+  font-size: 16px;
+  font-family: "Roboto";
+  font-weight: 500;
+  padding: 13px 18.75px;
+  background: linear-gradient(#ff79da, #9356dc);
+  border: none;
+  border-radius: 30px;
+  width: 218px;
+  height: 50px;
+}/*# sourceMappingURL=styles.css.map */
