@@ -1,1 +1,60 @@
+$main-color: #9356dc;
+$second-color: #ff79da;
+$third-color: #99e2d0;
 
+* {
+    max-width: 1440px;
+}
+
+a {
+    text-decoration: none;
+    display: flex;
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+header { /*** HEADER ***/
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+}
+
+header .logo {
+        justify-content: center;
+        height: 44px;
+        padding: 24px 89px 0;
+    }
+
+.search-location {
+    background-color:#e6e6e6; /*** couleur à revoir ***/
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    height: 50px;
+    width: 100vw;
+    gap: 17px;
+}
+
+.search-location input {
+    background-color: #e6e6e6; /*** couleur à revoir ***/
+    border: none;
+    font-size: 16px;
+}
+
+.search-location .icon-marker {
+    display: flex;
+    align-items: center;
+    width: 12px;
+    width: 16px;
+}
