@@ -3,9 +3,16 @@ $main-color: #9356dc;
 $second-color: #ff79da;
 $third-color: #99e2d0;
 
+/*** MIXINS
+@mixin first-mixin {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  } ***/
+
 /*** GENERAL ***/
 * {
-    margin-left: 0;
+    margin: 0;
 }
 
 a {
@@ -17,12 +24,13 @@ h1 {
     font-family: "Shrikhand";
     font-size: 30px;
     font-weight: 400;
+    padding: 14px 89px 6px;
     color: #000;
 }
 
 h2 {
     font-size: 24px;
-    padding-top: 30px;
+    padding-top: 40px;
 }
 
 h3 {
@@ -77,7 +85,6 @@ header {
 }
 
 /*** 1ER RECTANGLE ***/
-
 .first {
     background: #f7f7f7;
     display: flex;
@@ -108,4 +115,33 @@ header {
     border-radius: 30px;
     width: 218px;
     height: 50px;
+}
+
+/*** 2EME RECTANGLE ***/
+.second {
+
+    h2 {
+        padding-left: 17px;
+    }
+
+    .fonctioning {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    ol {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .fonctioning-btn {
+        border-radius: 16px;
+        background: #f6f6f6;
+        border: none;
+        height: 72px;
+        width: 100%;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    }
 }
