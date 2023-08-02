@@ -130,14 +130,41 @@ header {
         gap: 30px;
     }
 
-    ol {
+    .list-btn {
         display: flex;
         flex-direction: column;
         gap: 20px;
+
+        list-style-type: none;
+        padding: 0;
     }
 
+    li {
+        position: relative;
+        padding-left: 25px;
+    }
+
+    li:before {
+        content: counter(item);
+        counter-increment: item;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 24px;
+        height: 24px;
+        font-size: 18px;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: $main-color;
+        border-radius: 50%;
+        line-height: 20px;
+      }
+
     .fonctioning-btn {
-        border-radius: 16px;
+        border-radius: 20px;
         background: #f6f6f6;
         border: none;
         height: 72px;
