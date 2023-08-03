@@ -1,9 +1,11 @@
+/*** Ecritures des text à revoir (épaisseurs) ***/
+
 /*** VARIABLES ***/
 $main-color: #9356dc;
 $second-color: #ff79da;
 $third-color: #99e2d0;
 
-/*** VARIABLES ***/
+/*** MIXINS ***/
 
 @mixin mixin-icon {
     color: #7e7e7e;
@@ -83,6 +85,7 @@ header {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
+    align-items: center;
     height: 50px;
     width: auto;
     gap: 17px;
@@ -103,6 +106,8 @@ header {
         background-color: #eaeaea;
         border: none;
         font-size: 16px;
+        font-family: "Roboto";
+        font-weight: 500;
     }
 
     .icon-marker {
@@ -114,7 +119,7 @@ header {
 
 /*** 1ER RECTANGLE ***/
 .first {
-    background: #f7f7f7;
+    background: #f6f6f6;
     display: flex;
     flex-direction: column;
     width: auto;
@@ -133,8 +138,7 @@ header {
         gap: 15px;
     }
 
-    .second-title span {
-        /*** pq si gras ? ***/
+    .light {
         font-family: "Roboto";
         font-weight: 300;
         font-size: 18px;
@@ -147,6 +151,7 @@ header {
     padding: 13px 19px;
     background: linear-gradient($second-color, $main-color);
     border: none;
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
     width: 218px;
     height: 50px;
@@ -195,8 +200,8 @@ header {
         border-radius: 20px;
         background: #f6f6f6;
         border: none;
-        height: 72px;
-        width: 322px;
+        height: 7.5vh;
+        width: 86vw;
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
     }
 
@@ -226,68 +231,146 @@ header {
 /*** 3EME RECTANGLE ***/
 
 .third {
-    /*** à revoir (surtout img). Fait à vue d'oeil ***/
     @include mixin-grid-mobile;
-    background: #f7f7f7;
+    background: #f6f6f6;
     padding: 0 20px 60px;
 
     h2 {
         padding-left: 0;
     }
 
+    h3 {
+        padding-top: 8px;
+        padding-bottom: 3px;
+    }
+
+    .card-span-text {
+        color: #000;
+        padding-left: 17px;
+        padding-bottom: 10px;
+        font-family: "Roboto";
+        font-size: 17px;
+        font-weight: 300;
+    }
+
     .cards {
+        display: grid;
+        gap: 20px;
         width: 100%;
     }
 
     .card {
-        background-color: white;
-        flex: 0 0 30%;
+        background-color: #ffffff;
+        height: 251px;
         display: flex;
         flex-direction: column;
+        position: relative;
         border-radius: 15px;
         box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
     }
 
     img {
-        position: relative;
         width: 100%;
-        height: 150px;
+        height: 170px;
         border-radius: 15px 15px 0 0;
     }
+}
 
-    .card-new { /*** à revoir . Pas bon! (idem .card-new2) ***/
-        position: absolute;
-        width: 65px;
-        height: 12px;
-        bottom: -2px;
-        right: 33px;
-        border-radius: 3px;
-        color: #008766;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        font-size: 14px;
-        font-weight: 500;
-        font-family: "Roboto";
-        background-color: #99e2d0;
+.card-new {
+    background-color: #99e2d0;
+    color: #008766;
+    border-radius: 2px;
+    height: 15px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 14px;
+    font-family: "Roboto";
+    font-weight: 400;
+    padding: 7px 10px;
+}
+
+.heart-icons {
+    /*** animation coeur ne marche pas ***/
+    color: #000;
+    position: absolute;
+    bottom: 47px;
+    right: 22px;
+    transform: scaleX(1.375) scaleY(1.315);
+    cursor: pointer;
+
+    input[type="checkbox"].like-checkbox {
+        display: none;
+
+        &:checked + label .heart-fill {
+            transform: scaleY(1);
+        }
     }
 
-    .card-new2 {
-        position: absolute;
-        width: 65px;
-        height: 12px;
-        bottom: -22vh;
-        right: 33px;
-        border-radius: 3px;
-        color: #008766;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        font-size: 14px;
-        font-weight: 500;
-        font-family: "Roboto";
-        background-color: #99e2d0;
+    label {
+        display: inline-block;
+        position: relative;
+
+        i.fa-heart {
+            position: relative;
+            z-index: 1;
+        }
+
+        .heart-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background-color: $main-color;
+            transform-origin: bottom;
+            transform: scaleY(0);
+            transition: transform 0.2s;
+            z-index: -1;
+        }
+    }
+
+    label:hover .heart-fill {
+        transform: scaleY(0);
+    }
+
+    input[type="checkbox"].like-checkbox:checked + label:hover .heart-fill {
+        transform: scaleY(1);
+    }
+}
+
+/*** FOOTER ***/
+
+footer {
+    background-color: #353535;
+    padding: 22px 25px;
+
+    .footer-content {
+        @include mixin-grid-mobile;
+        gap: 15px;
+    }
+
+    h2 {
+        font-family: "Shrikhand";
+        font-size: 15px;
+        font-weight: 400;
+        padding: 0;
+        color: white;
+    }
+
+    ul {
+        display: grid;
+        gap: 7px;
+        list-style: none;
+        padding-inline-start: 0;
+    }
+
+    a {
+        color: white;
+        gap: 11px;
     }
 }
