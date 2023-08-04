@@ -295,51 +295,30 @@ header {
 }
 
 .heart-icons {
-    /*** animation coeur ne marche pas ***/
-    color: #000;
-    position: absolute;
-    bottom: 47px;
-    right: 22px;
-    transform: scaleX(1.375) scaleY(1.315);
-    cursor: pointer;
+    i {
+        color: #000;
+        transition: color 0.3s;
+        position: absolute;
+        font-size: 22px;
+        bottom: 47px;
+        right: 22px;
+        cursor: pointer;
+    }
 
-    input[type="checkbox"].like-checkbox {
-        display: none;
-
-        &:checked + label .heart-fill {
-            transform: scaleY(1);
+    &:hover {
+        i {
+            color: $main-color;
         }
     }
 
-    label {
-        display: inline-block;
-        position: relative;
+    &.liked {
+        i {
+            color: $main-color;
 
-        i.fa-heart {
-            position: relative;
-            z-index: 1;
+            &::before {
+                color: $main-color;
+            }
         }
-
-        .heart-fill {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 0;
-            background-color: $main-color;
-            transform-origin: bottom;
-            transform: scaleY(0);
-            transition: transform 0.2s;
-            z-index: -1;
-        }
-    }
-
-    label:hover .heart-fill {
-        transform: scaleY(0);
-    }
-
-    input[type="checkbox"].like-checkbox:checked + label:hover .heart-fill {
-        transform: scaleY(1);
     }
 }
 
