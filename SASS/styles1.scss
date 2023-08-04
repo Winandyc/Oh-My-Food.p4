@@ -28,24 +28,12 @@ $third-color: #99e2d0;
 
 a {
     text-decoration: none;
-    display: flex;
-}
-
-h1 {
-    font-family: "Shrikhand";
-    font-size: 30px;
-    font-weight: 400;
-    padding: 14px 89px 6px;
-    color: #000;
 }
 
 h2 {
     font-size: 24px;
-    padding-top: 50px;
-    padding-bottom: 30px;
-}
-
-h2 {
+    padding-top: 32px;
+    padding-bottom: 40px;
     font-family: "Shrikhand";
     font-size: 28px;
     padding-left: 17px;
@@ -64,16 +52,63 @@ img {
     height: 275px;
 }
 
+.second-conteiner {
+    background-color: #f6f6f6;
+    border-radius: 25px 25px 0 0;
+    position: relative;
+    top: 7px;
+}
 
 /*** HEADER ***/
+.header-content {
+    display: grid;
+    grid-template-columns: 64px 1fr 64px;
+    align-items: center;
+    justify-items: center;
+    height: 64px;
 
-.main-title {
-    .fa-arrow-left {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .arrow-icon {
         color: #000;
         font-size: 30px;
-        padding-left: 17px;
+    }
+
+    h1 {
+        font-family: "Shrikhand";
+        font-size: 30px;
+        font-weight: 400;
+
+        a {
+            color: #000;
+        }
+    }
+}
+
+/*** FIRST ***/
+
+.heart-icons {
+    i {
+        color: #000;
+        transition: color 0.3s;
+        position: absolute;
+        font-size: 22px;
+        bottom: 47px;
+        right: 30px;
+        cursor: pointer;
+    }
+
+    &:hover {
+        i {
+            color: $main-color;
+        }
+    }
+
+    &.liked {
+        i {
+            color: $main-color;
+
+            &::before {
+                color: $main-color;
+            }
+        }
     }
 }
