@@ -21,7 +21,7 @@ $third-color: #99e2d0;
     grid-template-rows: 1fr;
 }
 
-/*** GENERAL ***/
+/*** GLOBAL ***/
 * {
     margin: 0;
 }
@@ -169,7 +169,7 @@ header {
 
     .list-btn {
         display: grid;
-        justify-content: center;
+        justify-items: center;
         align-items: center;
         gap: 20px;
         list-style-type: none;
