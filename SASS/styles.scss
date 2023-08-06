@@ -28,7 +28,6 @@ $third-color: #99e2d0;
 
 a {
     text-decoration: none;
-    display: flex;
 }
 
 h1 {
@@ -154,7 +153,10 @@ img {
     box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
     height: 24px;
+    width: 180px;
+    display: flex;
     align-items: center;
+    justify-content: center;
     transition: 0.3s ease-in-out;
 
     &:hover {
@@ -206,6 +208,7 @@ img {
     .fonctioning-link {
         @include mixin-txt16px;
         color: #000;
+        display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 20px;
@@ -244,7 +247,7 @@ img {
 .third {
     @include mixin-grid-mobile;
     background: #f6f6f6;
-    padding: 0 20px 60px;
+    padding: 0 20px 70px;
 
     h2 {
         padding-left: 0;
