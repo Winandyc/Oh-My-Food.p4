@@ -1,9 +1,5 @@
-/*** VARIABLES ***/
-$main-color: #9356dc;
-$second-color: #ff79da;
-$third-color: #99e2d0;
+@import "variables";
 
-/*** PAGE ***/
 * {
     margin: 0;
 }
@@ -42,6 +38,10 @@ $third-color: #99e2d0;
     }
 
     .second-conteiner {
+        @media (min-width: $breakPointL) {
+            margin: 0 184px;
+        }
+
         background-color: #f6f6f6;
         border-radius: 25px 25px 0 0;
         position: relative;
@@ -53,37 +53,56 @@ $third-color: #99e2d0;
             gap: 40px;
 
             .conteiner-title {
-                h1 {
-                    font-size: 24px;
-                    padding-top: 32px;
-                    font-family: "Shrikhand";
-                    font-size: 28px;
-                    padding-left: 17px;
+                display: flex;
+
+                @media (min-width: $breakPointM) {
+                    justify-content: center;
                 }
 
-                .heart-icons {
-                    i {
-                        color: #000;
-                        transition: color 0.3s;
-                        position: absolute;
-                        font-size: 22px;
-                        top: 43px;
-                        right: 25px;
-                        cursor: pointer;
+                .main-title {
+                    display: flex;
+                    padding-top: 32px;
+                    padding-left: 17px;
+                    gap: 20px;
+
+                    @media (min-width: $breakPointM) {
+                        gap: 30px;
+                        padding-top: 32px;
                     }
 
-                    &:hover {
-                        i {
-                            color: $main-color;
-                        }
+                    h1 {
+                        font-family: "Shrikhand";
+                        font-size: 28px;
                     }
 
-                    &.liked {
+                    .heart-icons {
                         i {
-                            color: $main-color;
+                            color: #000;
+                            font-size: 22px;
+                            cursor: pointer;
+                            transition: color 0.3s;
+                            position: relative;
+                            top: 10px;
 
-                            &::before {
-                                color: $main-color;
+                            @media (min-width: $breakPointM) {
+                                position: absolute;
+                                top: 42px;
+                            }
+
+                            &:hover {
+                                i {
+                                    color: $main-color;
+                                }
+                            }
+
+                            &.liked {
+                                i {
+                                    color: $main-color;
+
+                                    &::before {
+                                        color: $main-color;
+                                    }
+                                }
                             }
                         }
                     }
@@ -127,6 +146,10 @@ $third-color: #99e2d0;
                         width: 86vw;
                         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 
+                        @media (min-width: $breakPointL) {
+                            width: 634px;
+                        }
+
                         .card-content {
                             padding: 15px;
                             display: block;
@@ -169,7 +192,6 @@ $third-color: #99e2d0;
             }
 
             .link-search-div {
-                /*** espacement du dessus à revoir. Pb avec second-conteiner? Jai mis un bcg sur main-conteiner pour cacher ***/
                 display: flex;
                 justify-content: center;
 
@@ -211,6 +233,12 @@ $third-color: #99e2d0;
             gap: 15px;
             padding: 22px 25px;
 
+            @media (min-width: $breakPointM) {
+                display: flex;
+                flex-direction: row-reverse;
+                gap: 80px;
+            }
+
             h2 {
                 font-family: "Shrikhand";
                 font-size: 15px;
@@ -225,9 +253,13 @@ $third-color: #99e2d0;
                 list-style: none;
                 padding-inline-start: 0;
 
+                @media (min-width: $breakPointM) {
+                    display: flex;
+                    gap: 15px;
+                }
+
                 a {
                     color: white;
-                    gap: 11px;
                 }
             }
         }
