@@ -5,6 +5,12 @@
     margin: 0;
 }
 
+body > svg {
+    width: 0;
+    height: 0;
+    position: fixed;
+}
+
 .main-container {
     a {
         text-decoration: none;
@@ -25,6 +31,7 @@
     }
 
     .search-location {
+        /* revoir couleur bouton au survol (voir maquette) */
         background-color: #eaeaea;
         display: flex;
         flex-wrap: nowrap;
@@ -109,9 +116,11 @@
                 align-items: center;
                 justify-content: center;
                 transition: 0.3s ease-in-out;
+                box-sizing: content-box;
 
                 &:hover {
                     filter: brightness(1.1);
+                    background: linear-gradient(#ff79da, #9356dc) rgba(255, 255, 255, 0.15);
                     box-shadow:
                         rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
                         rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
@@ -299,29 +308,23 @@
                     }
 
                     .heart-icons {
-                        i {
-                            color: #000;
-                            transition: color 0.3s;
+                        svg {
+                            stroke: #000;
+                            stroke-width: 1px;
+                            fill: #fff;
+                            transition: all 0.3s;
                             position: absolute;
-                            font-size: 22px;
-                            bottom: 47px;
+                            width: 22px;
+                            height: 22px;
+                            bottom: 31px;
                             right: 22px;
                             cursor: pointer;
                         }
 
-                        &:hover {
-                            i {
-                                color: $main-color;
-                            }
-                        }
-
-                        &.liked {
-                            i {
-                                color: $main-color;
-
-                                &::before {
-                                    color: $main-color;
-                                }
+                        &:active {
+                            svg {
+                                fill: url(#heart-gradient);
+                                stroke: url(#heart-gradient);
                             }
                         }
                     }
@@ -331,6 +334,7 @@
     }
 
     footer {
+        /* Mailto */
         background-color: #353535;
         padding: 22px 25px;
 
