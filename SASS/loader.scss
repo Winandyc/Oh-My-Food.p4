@@ -45,13 +45,28 @@ body {
   right: 0;
   bottom: 0;
   z-index: 1;
-  animation: hidden 0s forwards; // LOADER ICI 4SEC A REMETTRE
+  animation: hidden 0s forwards; // LOADER ICI 3SEC x2 A REMETTRE
+  -webkit-animation: hidden 0s forwards;
+
   @keyframes hidden {
-    from {
-      display: flex;
+    0% {
+      opacity: 1;
+      visibility: visible;
     }
-    to {
-      display: none;
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @-webkit-keyframes hidden {
+    0% {
+      opacity: 1;
+      visibility: visible;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
     }
   }
 }
